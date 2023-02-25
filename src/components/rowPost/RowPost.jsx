@@ -12,13 +12,11 @@ function RowPost({rowIndex, genreId, genreName, posterType, videoPlayingRow, set
     const [urlId, setUrlId] = useState('');
     useEffect(()=> {
         axios.get(url).then((response) => {
-            console.log(response.data);
             setMovies(response.data.results);
         }).catch((err) => {
             console.log(err);
         })
     },[])
-
     const movieTrailer = (id) => {
         axios.get('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+apiKey).then((response) => {
             if(response.data.results.length){
@@ -27,6 +25,8 @@ function RowPost({rowIndex, genreId, genreName, posterType, videoPlayingRow, set
             } else {
                 console.log('no videos available');
             }
+        }).catch((err) => {
+            console.log();
         })
     }
     const opts = {
@@ -53,7 +53,7 @@ function RowPost({rowIndex, genreId, genreName, posterType, videoPlayingRow, set
                 )
             })}
         </div>
-        {urlId && videoPlayingRow===rowIndex && <YouTube videoId={urlId.key} opts={opts} /> } 
+        {urlId && videoPlayingRow===rowIndex && <YouTube videoId={urlId.key} opts={opts}/> } 
     </div>
   )
 };
