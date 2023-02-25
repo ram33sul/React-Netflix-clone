@@ -1,0 +1,59 @@
+.rowPost{
+    background-color: black;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+}
+
+.sub-title{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.posters {
+    display: flex;
+    gap: 20px;
+    height: fit-content;
+    overflow-x: scroll;
+    overflow-y: visible;
+}
+
+.posters::-webkit-scrollbar{
+    display: none;
+}
+
+.each-poster {
+    position: relative;
+    cursor: pointer;
+}
+
+.each-poster > img{
+    height: 300px;
+}
+
+.each-poster-small > img{
+    height: 150px;
+}
+
+.title-on-each-poster {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    padding: 5px 15px 5px 5px;
+    width: fit-content;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    background-color: rgba(256, 256, 256, 0.5);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.title-on-each-poster-small {
+    font-size: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 3px 9px 3px 3px;
+}
